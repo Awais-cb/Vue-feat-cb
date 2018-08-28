@@ -1,7 +1,7 @@
 <template>
     <header class="Header">
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-              <router-link class="navbar-brand" to="/">Vue feat clipbucket</router-link>
+              <router-link class="navbar-brand" to="/">{{appConfigs.title}}</router-link>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -34,9 +34,15 @@
 
 <script>
 export default {
+    props:{
+        appConfigs:{
+            type:Object
+        }
+    },
     name: 'Header',
     data(){
         return{
+          title:'Vue feat clipbucket'
         }
     }
 }
