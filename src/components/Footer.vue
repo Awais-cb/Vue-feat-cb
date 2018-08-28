@@ -1,29 +1,26 @@
 <template>
-    <footer>
-        <p>Copyright 2018 {{ title }}</p>
-    </footer>
+<footer class="Footer navbar-dark bg-dark">
+    <div class="footer-copyright text-center py-3">© {{year}} Copyright:
+        <a href="https://demo.clipbucket.com" target="blank"> Clipbucket</a>
+    </div>
+</footer>
 </template>
 <script>
 export default {
-    props: {
-      title: {
-        type: 'Copyright clipbucket 2007-2018',
-        required: true
-      }
-    },
     data(){
         return{
+            year:new Date().getFullYear(),
         }
     }
+
 }
 </script>
 <style scoped>
-footer{
-    background: #222;
-    padding: 6px;
+.Footer{
+    color:#fff;
+    margin-top: 30px;
 }
-p{
-        color: lightgreen;
-        text-align: center;
+a{
+   color:#fff; 
 }
 </style>
