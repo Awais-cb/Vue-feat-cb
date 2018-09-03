@@ -25,7 +25,7 @@ const router = new VueRouter({
 });
 
 
-Vue.http.get('http://10.1.1.55/cb_multi/upload/api_public/getConfigs/')
+Vue.http.get('https://demo.clipbucket.com/enterprise/api_public/getConfigs/')
 .then(function (response) {
 	var data = response.body.data;
 	console.log(data);

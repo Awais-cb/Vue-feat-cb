@@ -26,7 +26,7 @@ export default {
 	},
 	methods:{
 	  	getPlaylists:function () {
-	  		this.$http.get('http://10.1.1.55/cb_multi/upload/api_public/getPlaylists/').then(function (response) {
+	  		this.$http.get('https://demo.clipbucket.com/enterprise/api_public/getPlaylists/').then(function (response) {
 	  			console.log(response);
 	  			this.playlists = response.body.data;
 	  		});

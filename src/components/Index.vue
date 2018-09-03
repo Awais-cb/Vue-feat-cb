@@ -39,13 +39,13 @@ export default {
   },
   methods:{
   	getFeaturedVideos:function () {
-  		this.$http.get('http://10.1.1.55/cb_multi/upload/api_public/getVideos/?sort=featured').then(function (feat_response) {
+  		this.$http.get('https://demo.clipbucket.com/enterprise/api_public/getVideos/?sort=featured').then(function (feat_response) {
   			console.log(feat_response);
   			this.featuredVideos = feat_response.body.data;
   		});
   	},
   	getRecVideos:function () {
-  		this.$http.get('http://10.1.1.55/cb_multi/upload/api_public/getVideos/?sort=most_recent').then(function (rec_response) {
+  		this.$http.get('https://demo.clipbucket.com/enterprise/api_public/getVideos/?sort=most_recent').then(function (rec_response) {
   			console.log(rec_response);
   			this.recVideos = rec_response.body.data;
   		});

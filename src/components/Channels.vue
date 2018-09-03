@@ -38,13 +38,13 @@ export default {
 	},
 	methods:{
 	  	getFeatChannels:function () {
-	  		this.$http.get('http://10.1.1.55/cb_multi/upload/api_public/getUsers/?sort=featured').then(function (response) {
+	  		this.$http.get('https://demo.clipbucket.com/enterprise/api_public/getUsers/?sort=featured').then(function (response) {
 	  			console.log(response);
 	  			this.featChannels = response.body.data;
 	  		});
 	  	},
 	  	getChannels:function () {
-	  		this.$http.get('http://10.1.1.55/cb_multi/upload/api_public/getUsers/').then(function (response) {
+	  		this.$http.get('https://demo.clipbucket.com/enterprise/api_public/getUsers/').then(function (response) {
 	  			console.log(response);
 	  			this.channels = response.body.data;
 	  		});

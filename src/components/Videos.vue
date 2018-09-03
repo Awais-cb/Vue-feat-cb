@@ -25,7 +25,7 @@ export default {
   },
   methods:{
   	getVideos:function () {
-  		this.$http.get('http://10.1.1.55/cb_multi/upload/api_public/getVideos/').then(function (response) {
+  		this.$http.get('https://demo.clipbucket.com/enterprise/api_public/getVideos/').then(function (response) {
   			console.log(response);
   			this.videos = response.body.data;
   		});
