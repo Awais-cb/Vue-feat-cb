@@ -36,4 +36,6 @@ Vue.http.get('https://demo.clipbucket.com/enterprise/api_public/getConfigs/')
 		store: store(data),
 		router:router
 	});
-})
+}).catch(function(error){
+    console.log(error);
+});

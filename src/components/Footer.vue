@@ -5,13 +5,16 @@
 </footer>
 </template>
 <script>
+// Using curly braces with 'mapGetters' because 'mapGetters' is not a default export of vuex and is defined as const while exporting 'export const mapGetters = someCode'    
+import {mapGetters} from 'vuex';
 export default {
     name: 'Footer',
+    // using vuex getters data from vuex states second way 
     computed:{
-        configs(){
-          // comming from vuex states 
-          return this.$store.state.configs;
-        }
+        // we can directly assign 'mapGetters' to 'computed:' but the better way is to use triple dots(Spread syntax) ES6,triple dots will extract all the properties/getters from 'mapGetters' one by one iterably and will assign them to parent computed object now we can add other computed properties too
+        ...mapGetters({
+            configs:'getConfigs',
+        })
     },
     data(){
         return{

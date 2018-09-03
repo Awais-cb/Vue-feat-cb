@@ -10,6 +10,12 @@ function stateBuilder(data) {
     	state: {
       		configs: data,
     	},
+    	getters: {
+    		getConfigs(state){
+    			// a getter is always have to return something
+    			return state.configs;
+    		}
+    	}
   	});
 }
 

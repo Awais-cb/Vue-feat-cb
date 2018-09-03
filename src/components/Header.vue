@@ -37,7 +37,8 @@ export default {
     name: 'Header',
     computed:{
         configs(){
-          return this.$store.state.configs;
+          // using vuex getters data from vuex states 
+          return this.$store.getters.getConfigs;
         }
     },
     data(){
