@@ -1,15 +1,16 @@
 <template>
 <footer class="Footer navbar-dark bg-dark">
-    <div class="footer-copyright text-center py-3"><a href="https://demo.clipbucket.com" target="blank"> {{appConfigs.title}}</a> © {{year}}
+    <div class="footer-copyright text-center py-3"><a href="https://demo.clipbucket.com" target="blank"> {{configs.title}}</a> © {{year}}
     </div>
 </footer>
 </template>
 <script>
 export default {
     name: 'Footer',
-    props:{
-        appConfigs:{
-            type:Object
+    computed:{
+        configs(){
+          // comming from vuex states 
+          return this.$store.state.configs;
         }
     },
     data(){
