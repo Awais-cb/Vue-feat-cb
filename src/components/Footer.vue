@@ -6,18 +6,17 @@
 </template>
 <script>
 export default {
+    name: 'Footer',
     props:{
         appConfigs:{
             type:Object
         }
     },
-    name: 'Footer',
     data(){
         return{
             year:new Date().getFullYear(),
         }
     }
-
 }
 </script>
 <style scoped>

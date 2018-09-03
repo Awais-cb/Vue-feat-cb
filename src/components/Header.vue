@@ -34,12 +34,12 @@
 
 <script>
 export default {
+    name: 'Header',
     props:{
         appConfigs:{
             type:Object
         }
     },
-    name: 'Header',
     data(){
         return{
           title:'Vue feat clipbucket'
