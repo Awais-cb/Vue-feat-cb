@@ -9,7 +9,10 @@ export const messages = {
       featured_videos: 'Featured Videos',
       recent_videos: 'Recent Videos',
       featured_channels:'Featured channels',
-      other_channels:'Other channels'
+      other_channels:'Other channels',
+      items:'Items',
+      views:'Views',
+      subscribers:'subscribers',
     }
   },
   ja: {
@@ -22,7 +25,10 @@ export const messages = {
       featured_videos: 'おすすめ動画',
       recent_videos: '最近の動画',
       featured_channels:'注目のチャンネル',
-      other_channels:'他のチャンネル'
+      other_channels:'他のチャンネル',
+      items:'アイテム',
+      views:'ビュー',
+      subscribers:'加入者',
     }
   }
 }

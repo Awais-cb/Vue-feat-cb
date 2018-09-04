@@ -7,7 +7,7 @@
 					<img class="card-img-top" v-bind:src=obj.avatar alt="Card image cap">
 				 	<div class="card-body">
 					    <h6 class="card-title">{{obj.username}}</h6>
-					    <p class="card-text">{{obj.subscribers}} subscribers</p>
+					    <p class="card-text">{{obj.subscribers}} {{$t('lang.subscribers')}}</p>
 				  	</div>
 				</div>
 			</div>
@@ -19,7 +19,7 @@
 					<img class="card-img-top" v-bind:src=obj.avatar alt="Card image cap">
 				 	<div class="card-body">
 					    <h6 class="card-title">{{obj.username}}</h6>
-					    <p class="card-text">{{obj.subscribers}} subscribers</p>
+					    <p class="card-text">{{obj.subscribers}} {{$t('lang.subscribers')}}</p>
 				  	</div>
 				</div>
 			</div>

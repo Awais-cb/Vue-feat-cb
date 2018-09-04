@@ -31,7 +31,7 @@ const router = new VueRouter({
 
 // object for multi lingual translations
 const i18n = new VueI18n({
-  locale: 'ja', // set locale
+  locale: 'en', // set locale
   messages, // set locale messages
 });
 

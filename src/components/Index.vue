@@ -7,7 +7,7 @@
   				<img class="card-img-top" v-bind:src=obj.video.thumbs.big alt="Card image cap">
   			 	<div class="card-body">
   				    <h6 class="card-title">{{obj.video.title}}</h6>
-  				    <p class="card-text">{{obj.video.views}} Views</p>
+  				    <p class="card-text">{{obj.video.views}} {{$t('lang.views')}}</p>
   			  	</div>
   			</div>
   		</div>
@@ -19,7 +19,7 @@
 				<img class="card-img-top" v-bind:src=obj.video.thumbs.big alt="Card image cap">
 			 	<div class="card-body">
 				    <h6 class="card-title">{{obj.video.title}}</h6>
-				    <p class="card-text">{{obj.video.views}} Views</p>
+				    <p class="card-text">{{obj.video.views}} {{$t('lang.views')}}</p>
 			  	</div>
 			</div>
 		</div>

@@ -9,7 +9,7 @@ function stateBuilder(data) {
   	return new Vuex.Store({
     	state: {
       		configs: data,
-          app_language: 'en'
+          appLanguage: 'en'
     	},
     	getters: {
     		getConfigs(state){
@@ -18,7 +18,7 @@ function stateBuilder(data) {
         },
         getAppLang(state){
     			// a getter is always have to return something
-    			return state.app_language;
+    			return state.appLanguage;
     		}
     	},
       mutations:{

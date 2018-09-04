@@ -7,7 +7,7 @@
   				<!-- <img class="card-img-top" v-bind:src=obj.first_item.thumbs.big alt="Card image cap"> -->
   			 	<div class="card-body">
   				    <h6 class="card-title">{{obj.playlist_name}}</h6>
-  				    <p class="card-text">{{obj.total_items}} Items</p>
+  				    <p class="card-text">{{obj.total_items}} {{$t('lang.items')}}</p>
   			  	</div>
   			</div>
   		</div>
