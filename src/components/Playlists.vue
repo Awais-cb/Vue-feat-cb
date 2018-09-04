@@ -1,6 +1,6 @@
 <template>
   <div class="photos container">
-    <h3 class="border-bottom">Playlists</h3>
+    <h3 class="border-bottom">{{ $t("lang.playlists") }}</h3>
     <div class="row">
   		<div v-for='obj in playlists' class="col-xs-4 col-sm-4 col-lg-4 col-md-4" >
   			<div class="card" style="width: 18rem;">	

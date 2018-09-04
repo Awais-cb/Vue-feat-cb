@@ -1,6 +1,6 @@
 <template>
   <div class="index container">
-    <h3 class="border-bottom">Featured Videos</h3>
+    <h3 class="border-bottom">{{ $t("lang.featured_videos") }}</h3>
     <div class="row">
   		<div v-for='obj in featuredVideos' class="col-xs-4 col-sm-4 col-lg-4 col-md-4" >
   			<div class="card" style="width: 18rem;">	
@@ -12,7 +12,7 @@
   			</div>
   		</div>
 	 </div>
-  <h3 class="border-bottom">Most Recent</h3>
+  <h3 class="border-bottom">{{ $t("lang.recent_videos") }}</h3>
 	<div class="row">
 		<div v-for='obj in recVideos' class="col-xs-4 col-sm-4 col-lg-4 col-md-4" >
 			<div class="card" style="width: 18rem;">	

@@ -1,6 +1,6 @@
 <template>
   	<div class="channels container">
-	    <h3 class="border-bottom">Featured Channels</h3>
+	    <h3 class="border-bottom">{{$t('lang.featured_channels')}}</h3>
 	    <div class="row">
 			<div v-for='obj in featChannels' class="col-xs-4 col-sm-4 col-lg-4 col-md-4" >
 				<div class="card" style="width: 18rem;">	
@@ -12,7 +12,7 @@
 				</div>
 			</div>
 		</div>
-		<h3 class="border-bottom">Other Channels</h3>
+		<h3 class="border-bottom">{{$t('lang.other_channels')}}</h3>
 	    <div class="row">
 			<div v-for='obj in channels' class="col-xs-4 col-sm-4 col-lg-4 col-md-4" >
 				<div class="card" style="width: 18rem;">	

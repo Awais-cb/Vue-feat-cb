@@ -10,16 +10,16 @@
                 
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item">
-                    <router-link class="nav-link" to="/">Home</router-link>
+                    <router-link class="nav-link" to="/">{{ $t("lang.home") }}</router-link>
                   </li>
                   <li class="nav-item">
-                    <router-link class="nav-link" to="/videos">Videos</router-link>
+                    <router-link class="nav-link" to="/videos">{{ $t("lang.videos") }}</router-link>
                   </li>
                   <li class="nav-item">
-                    <router-link class="nav-link" to="/channels">Channels</router-link>
+                    <router-link class="nav-link" to="/channels">{{ $t("lang.channels") }}</router-link>
                   </li>
                   <li class="nav-item">
-                    <router-link class="nav-link" to="/playlists" >Playlists</router-link>
+                    <router-link class="nav-link" to="/playlists" >{{ $t("lang.playlists") }}</router-link>
                   </li>
                 </ul>
 

@@ -1,6 +1,6 @@
 <template>
   	<div class="videos container">
-	    <h3 class="border-bottom">Videos</h3>
+	    <h3 class="border-bottom">{{$t('lang.videos')}}</h3>
 	    <div class="row">
 			<div v-for='obj in videos' class="col-xs-4 col-sm-4 col-lg-4 col-md-4" >
 				<div class="card" style="width: 18rem;">	
