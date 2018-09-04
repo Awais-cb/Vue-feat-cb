@@ -15,7 +15,10 @@ function stateBuilder(data) {
     			// a getter is always have to return something
     			return state.configs;
     		}
-    	}
+    	},
+      mutations:{
+        // state manipulators will be added here
+      }
   	});
 }
 
