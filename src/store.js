@@ -9,16 +9,19 @@ function stateBuilder(data) {
   	return new Vuex.Store({
     	state: {
       		configs: data,
-          appLanguage: 'en'
+          appLanguage: 'en',
+          currentTheme:'vod_legacy'
     	},
     	getters: {
     		getConfigs(state){
-          // a getter is always have to return something
+          // a getter is always have to return something from state
           return state.configs;
         },
         getAppLang(state){
-    			// a getter is always have to return something
-    			return state.appLanguage;
+          return state.appLanguage;
+        },
+        getCurrentTheme(state){
+    			return state.currentTheme;
     		}
     	},
       mutations:{
