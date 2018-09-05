@@ -10,7 +10,7 @@ function stateBuilder(data) {
     	state: {
       		configs: data,
           appLanguage: 'en',
-          currentTheme:'vod_legacy'
+          currentTheme:'vodLegacy'
     	},
     	getters: {
     		getConfigs(state){
