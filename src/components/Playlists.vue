@@ -1,7 +1,7 @@
 <template>
   <div class="photos container">
     <h3 class="border-bottom">{{ $t("lang.playlists") }}</h3>
-    <div class="row">
+    <div v-if="playlists.length" class="row">
   		<div v-for='obj in playlists' class="col-xs-4 col-sm-4 col-lg-4 col-md-4" >
   			<div class="card" style="width: 18rem;">	
   				<!-- <img class="card-img-top" v-bind:src=obj.first_item.thumbs.big alt="Card image cap"> -->
@@ -11,7 +11,12 @@
   			  	</div>
   			</div>
   		</div>
-	 </div>
+	</div>
+	<div v-else class="row">
+        <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 d-flex justify-content-center" >
+          <img src="./../assets/loader.gif" class="align-self-center" alt="Loading" width="50" height="50">
+        </div>
+    </div>
 
   </div>
 </template>

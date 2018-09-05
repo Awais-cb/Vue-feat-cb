@@ -1,7 +1,7 @@
 <template>
   <div class="index container">
     <h3 class="border-bottom">{{ $t("lang.featured_videos") }}</h3>
-    <div class="row">
+    <div v-if="featuredVideos.length" class="row">
   		<div v-for='obj in featuredVideos' class="col-xs-4 col-sm-4 col-lg-4 col-md-4" >
   			<div class="card" style="width: 18rem;">	
   				<img class="card-img-top" v-bind:src=obj.video.thumbs.big alt="Card image cap">
@@ -11,9 +11,14 @@
   			  	</div>
   			</div>
   		</div>
-	 </div>
+	  </div>
+    <div v-else class="row">
+        <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 d-flex justify-content-center" >
+          <img src="./../assets/loader.gif" class="align-self-center" alt="Loading" width="50" height="50">
+        </div>
+    </div>
   <h3 class="border-bottom">{{ $t("lang.recent_videos") }}</h3>
-	<div class="row">
+	<div v-if="recVideos.length" class="row">
 		<div v-for='obj in recVideos' class="col-xs-4 col-sm-4 col-lg-4 col-md-4" >
 			<div class="card" style="width: 18rem;">	
 				<img class="card-img-top" v-bind:src=obj.video.thumbs.big alt="Card image cap">
@@ -24,6 +29,11 @@
 			</div>
 		</div>
 	</div>
+  <div v-else class="row">
+    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 d-flex justify-content-center" >
+      <img src="./../assets/loader.gif" class="align-self-center" alt="Loading" width="50" height="50">
+    </div>
+  </div>
 
   </div>
 </template>
