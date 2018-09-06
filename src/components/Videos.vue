@@ -3,7 +3,7 @@
 	    <h3 class="border-bottom">{{$t('lang.videos')}}</h3>
 	    <div v-if='videos.length' class="row">
   			<div v-for='obj in videos' class="col-xs-4 col-sm-4 col-lg-4 col-md-4" >
-  				<router-link class="nav-link" to="/">
+  				<router-link class="nav-link" :to="'/watch/'+obj.video.videoid">
             <div class="card" style="width: 18rem;">	
     					<img class="card-img-top" v-bind:src=obj.video.thumbs.big alt="Card image cap">
     				 	<div class="card-body">

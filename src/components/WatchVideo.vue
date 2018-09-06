@@ -1,6 +1,6 @@
 <template>
-  <div class="photos container">
-    <h2>Watch video</h2>
+  <div class="WatchVideo container">
+    <h3 class="border-bottom">{{vdata.title}}</h3>
 
   </div>
 </template>
@@ -10,23 +10,23 @@ export default {
   name: 'WatchVideo',
 	data () {
 	    return {
-	      vdetails:[],
+	      videoId : this.$route.params.id,
+	      vdata:[]
 	    }
 	},
 	methods:{
 	  	getVideo:function () {
-	  		this.$http.get('https://demo.clipbucket.com/enterprise/api_public/getPlaylists/').then(function (response) {
-	  			console.log(response);
-	  			this.vdetails = response.body.data;
+	  		this.$http.get('https://demo.clipbucket.com/enterprise/api_public/getVideos/?video_id='+this.videoId).then(function (response) {
+	  			var rawData = response.body.data;
+	  			rawData = rawData[0];
+	  			console.log(rawData);
+	  			this.vdata = rawData.video;
 	  		});
 	  	},
 	},
 	created:function () {
 	  	this.getVideo();
-	},
-	// updated:function () {
-	// 	this.getPlaylists();
-	// }
+	}
 }
 </script>
 
