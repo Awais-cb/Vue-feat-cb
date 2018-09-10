@@ -1,11 +1,12 @@
 <template>
   <div class="WatchVideo container">
     <h3 class="border-bottom">{{vdata.title}}</h3>
-
+	<Player/>
   </div>
 </template>
 
 <script>
+import Player from './player/Player';
 export default {
   name: 'WatchVideo',
 	data () {
@@ -13,6 +14,9 @@ export default {
 	      videoId : this.$route.params.id,
 	      vdata:[]
 	    }
+	},
+	components:{
+		Player
 	},
 	methods:{
 	  	getVideo:function () {
