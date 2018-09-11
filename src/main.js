@@ -39,7 +39,7 @@ const i18n = new VueI18n({
 Vue.http.get('https://demo.clipbucket.com/enterprise/api_public/getConfigs/')
 .then(function (response) {
 	var data = response.body.data;
-	console.log(data);
+	// console.log(data);
 	new Vue({
 		el: '#app',
 		components: { App },

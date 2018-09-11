@@ -1,12 +1,12 @@
 <template>
     <div class="Player">
-        <video preload="none" class="video-js vjs-default-skin" width="640" height="360" controls>
-            <source src="http://video.h-cdn.com/static/hls/cdn2/master.m3u8" type="application/x-mpegurl">
+        <video preload="none" class="video-js vjs-default-skin" width="1110" height="650" controls>
+            <source src="https://demo.clipbucket.com/enterprise/files/videos/2018/03/20/1521531717e6dbe/1521531717e6dbe.m3u8" type="application/x-mpegurl">
         </video>
     </div>
 </template>
 <script>
-// var playerLib = require('../assets/player/hola_player.dev.js');
+var playerLib = require('../../assets/player/hola_player.dev.js');
 export default {
     name: 'Player',
 
@@ -15,12 +15,19 @@ export default {
            
         }
     },
-    methods:{
-        initPlayer:function(){
-            window.hola_player({title: 'Test title'});
+    props:{
+        vdata:{
+            // type:Array,
+            required:true
         }
     },
-    created:function(){
+    methods:{
+        initPlayer:function(){
+            // console.log(this.vdata.video.thumbs);
+            window.hola_player({title: this.vdata.video.title});
+        }
+    },
+    mounted:function(){
         this.initPlayer();
     }
 }

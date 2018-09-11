@@ -1,7 +1,7 @@
 <template>
   <div class="WatchVideo container">
-    <h3 class="border-bottom">{{vdata.title}}</h3>
-	<Player/>
+    <h3 class="border-bottom">{{vdata.video.title}}</h3>
+	<video-player :vdata="vdata"></video-player>
   </div>
 </template>
 
@@ -12,19 +12,18 @@ export default {
 	data () {
 	    return {
 	      videoId : this.$route.params.id,
-	      vdata:[]
+	      vdata:'',
 	    }
 	},
 	components:{
-		Player
+		'video-player':Player,
 	},
 	methods:{
 	  	getVideo:function () {
 	  		this.$http.get('https://demo.clipbucket.com/enterprise/api_public/getVideos/?video_id='+this.videoId).then(function (response) {
 	  			var rawData = response.body.data;
 	  			rawData = rawData[0];
-	  			console.log(rawData);
-	  			this.vdata = rawData.video;
+	  			this.vdata = rawData;
 	  		});
 	  	},
 	},
