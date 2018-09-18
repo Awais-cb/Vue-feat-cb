@@ -33,6 +33,7 @@ export default {
     }
   },
   created(){
+      this.$i18n.locale = 'ja';
       this.getConfigsApi();
   }
 }

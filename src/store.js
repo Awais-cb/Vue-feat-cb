@@ -10,7 +10,6 @@ export const store = new Vuex.Store({
   	// schema to presist data in
     state: {
     		configs: [],
-        appLanguage: 'en',
         currentTheme:'default'
   	},
     
@@ -26,6 +25,6 @@ export const store = new Vuex.Store({
       getConfigs(state){
         return state.configs;
       }
-  	},
+    },
 
 });
