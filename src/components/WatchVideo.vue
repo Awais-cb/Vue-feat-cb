@@ -7,6 +7,7 @@
 
 <script>
 import Player from './player/Player';
+import axios from 'axios'
 export default {
   name: 'WatchVideo',
 	data () {
@@ -20,11 +21,14 @@ export default {
 	},
 	methods:{
 	  	getVideo:function () {
-	  		this.$http.get('https://demo.clipbucket.com/enterprise/api_public/getVideos/?video_id='+this.videoId).then(function (response) {
-	  			var rawData = response.body.data;
+	  		let self = this;
+	  		axios.get('https://demo.clipbucket.com/enterprise/api_public/getVideos/?video_id='+this.videoId).then(function (response) {
+	  			var rawData = response.data.data;
 	  			rawData = rawData[0];
-	  			this.vdata = rawData;
-	  		});
+	  			self.vdata = rawData;
+	  		},(error)=>{
+		        console.log(error);
+		    });
 	  	},
 	},
 	created:function () {

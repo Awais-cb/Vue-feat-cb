@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import axios from 'axios'  
 export default {
   name: 'Videos',
   data () {
@@ -32,18 +33,18 @@ export default {
   },
   methods:{
   	getVideos:function () {
-  		this.$http.get('https://demo.clipbucket.com/enterprise/api_public/getVideos/').then(function (response) {
-  			console.log(response);
-  			this.videos = response.body.data;
-  		});
+  		let self = this;
+      axios.get('https://demo.clipbucket.com/enterprise/api_public/getVideos/').then(function (response) {
+  			console.log(response.data.data);
+  			self.videos = response.data.data;
+  		},(error)=>{
+          console.log(error);
+      });
   	},
   },
   created:function () {
     this.getVideos();
-  },
-  // updated:function () {
-  // 	this.getVideos();
-  // }
+  }
 }
 </script>
 

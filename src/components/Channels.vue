@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import axios from 'axios'	
 export default {
   	name: 'Channels',
 	data () {
@@ -45,26 +46,28 @@ export default {
 	},
 	methods:{
 	  	getFeatChannels:function () {
-	  		this.$http.get('https://demo.clipbucket.com/enterprise/api_public/getUsers/?sort=featured').then(function (response) {
+	  		let self = this;
+	  		axios.get('https://demo.clipbucket.com/enterprise/api_public/getUsers/?sort=featured').then(function (response) {
 	  			console.log(response);
-	  			this.featChannels = response.body.data;
-	  		});
+	  			self.featChannels = response.data.data;
+	  		},(error)=>{
+		        console.log(error);
+		    });
 	  	},
 	  	getChannels:function () {
-	  		this.$http.get('https://demo.clipbucket.com/enterprise/api_public/getUsers/').then(function (response) {
+	  		let self = this;
+	  		axios.get('https://demo.clipbucket.com/enterprise/api_public/getUsers/').then(function (response) {
 	  			console.log(response);
-	  			this.channels = response.body.data;
-	  		});
+	  			self.channels = response.data.data;
+	  		},(error)=>{
+		        console.log(error);
+		    });
 	  	},	  	
 	},
 	created:function () {
 	  	this.getFeatChannels();
 	  	this.getChannels();
-	},	
-	// updated:function () {
-	//   	this.getFeatChannels();
-	//   	this.getChannels();
-	// }
+	}
 }
 </script>
 

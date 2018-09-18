@@ -10,6 +10,7 @@
 <script>
 import Header from './components/Header'
 import Footer from './components/Footer'
+import axios from 'axios'
 
 export default {
   name: 'App',
@@ -24,8 +25,10 @@ export default {
   },
   methods:{
     getConfigsApi(){
-      this.$http.get('https://demo.clipbucket.com/enterprise/api_public/getConfigs/').then(response =>{
-          this.$store.commit('setConfigs',response.body.data);
+      axios.get('https://demo.clipbucket.com/enterprise/api_public/getConfigs/').then(response =>{
+          this.$store.commit('setConfigs',response.data.data);
+      },(error)=>{
+          console.log(error);
       });
     }
   },

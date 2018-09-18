@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import axios from 'axios'	
 export default {
   name: 'Playlists',
 	data () {
@@ -31,18 +32,18 @@ export default {
 	},
 	methods:{
 	  	getPlaylists:function () {
-	  		this.$http.get('https://demo.clipbucket.com/enterprise/api_public/getPlaylists/').then(function (response) {
-	  			console.log(response);
-	  			this.playlists = response.body.data;
-	  		});
+	  		let self = this;
+	  		axios.get('https://demo.clipbucket.com/enterprise/api_public/getPlaylists/').then(function (response) {
+	  			console.log(response.data.data);
+	  			self.playlists = response.data.data;
+	  		},(error)=>{
+	          	console.log(error);
+	      	});
 	  	},
 	},
 	created:function () {
 	  	this.getPlaylists();
 	},
-	// updated:function () {
-	// 	this.getPlaylists();
-	// }
 }
 </script>
 
