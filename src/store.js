@@ -5,29 +5,27 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex);
 
-function stateBuilder(data) {
-  	return new Vuex.Store({
-    	state: {
-      		configs: data,
-          appLanguage: 'en',
-          currentTheme:'default'
-    	},
-    	getters: {
-    		getConfigs(state){
-          // a getter is always have to return something from state
-          return state.configs;
-        },
-        getAppLang(state){
-          return state.appLanguage;
-        },
-        getCurrentTheme(state){
-    			return state.currentTheme;
-    		}
-    	},
-      mutations:{
-        // state manipulators will be added here
-      }
-  	});
-}
 
-export default stateBuilder;
+export const store = new Vuex.Store({
+  	// schema to presist data in
+    state: {
+    		configs: [],
+        appLanguage: 'en',
+        currentTheme:'default'
+  	},
+    
+    // State manipulators will be added here
+    mutations:{
+      setConfigs(state,configObj){
+        state.configs = configObj;
+      }
+    },
+
+    // Getter is always have to return something from state
+    getters: {
+      getConfigs(state){
+        return state.configs;
+      }
+  	},
+
+});

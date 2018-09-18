@@ -22,8 +22,15 @@ export default {
     'app-header':Header,
     'app-footer':Footer
   },
+  methods:{
+    getConfigsApi(){
+      this.$http.get('https://demo.clipbucket.com/enterprise/api_public/getConfigs/').then(response =>{
+          this.$store.commit('setConfigs',response.body.data);
+      });
+    }
+  },
   created(){
-      
+      this.getConfigsApi();
   }
 }
 </script>
