@@ -25,7 +25,7 @@ export default {
   },
   methods:{
     getConfigsApi(){
-      axios.get('https://demo.clipbucket.com/enterprise/api_public/getConfigs/').then(response =>{
+      axios.get('https://demo.clipbucket.com/enterprise/api_public/getConfigs/').then((response) =>{
           this.$store.commit('setConfigs',response.data.data);
       },(error)=>{
           console.log(error);
