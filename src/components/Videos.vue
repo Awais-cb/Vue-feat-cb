@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import axios from 'axios'  
+import videos from '../includes/api/videos'   
 export default {
   name: 'Videos',
   data () {
@@ -32,18 +32,14 @@ export default {
     }
   },
   methods:{
-  	getVideos:function () {
-  		let self = this;
-      axios.get('https://demo.clipbucket.com/enterprise/api_public/getVideos/').then(function (response) {
-  			console.log(response.data.data);
-  			self.videos = response.data.data;
-  		},(error)=>{
-          console.log(error);
-      });
-  	},
+  	setPageData:function () {
+    		videos.getFeaturedVideosApi().then(data =>{
+              this.videos = data;
+        });
+  	}
   },
   created:function () {
-    this.getVideos();
+    this.setPageData();
   }
 }
 </script>

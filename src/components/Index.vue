@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import axios from 'axios'  
+import videos from '../includes/api/videos' 
 export default {
   name: 'Index',
   data () {
@@ -53,28 +53,17 @@ export default {
     }
   },
   methods:{
-  	getFeaturedVideos:function () {
-      let self = this;
-  		axios.get('https://demo.clipbucket.com/enterprise/api_public/getVideos/?sort=featured').then(function (feat_response) {
-  			console.log(feat_response.data.data);
-  			self.featuredVideos = feat_response.data.data;
-  		},(error)=>{
-          console.log(error);
-      });
-  	},
-  	getRecVideos:function () {
-      let self = this;
-  		axios.get('https://demo.clipbucket.com/enterprise/api_public/getVideos/?sort=most_recent').then(function (rec_response) {
-  			console.log(rec_response.data.data);
-  			self.recVideos = rec_response.data.data;
-  		},(error)=>{
-          console.log(error);
-      });
-  	},
+  	  setPageData:function () {
+          videos.getFeaturedVideosApi().then(data =>{
+            this.featuredVideos = data;
+          });
+          videos.getRecentVideosApi().then(data =>{
+            this.recVideos = data;
+          });
+    	}
   },
   created:function () {
-    this.getRecVideos();
-    this.getFeaturedVideos();
+      this.setPageData();
   },
 }
 </script>

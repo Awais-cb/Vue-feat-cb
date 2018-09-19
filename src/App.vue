@@ -1,6 +1,5 @@
 <template>
   <div id="rootComponent">
-    <!-- passing title to child as prop -->
     <app-header></app-header>
     <router-view></router-view>
     <app-footer></app-footer>
@@ -10,7 +9,7 @@
 <script>
 import Header from './components/Header'
 import Footer from './components/Footer'
-import axios from 'axios'
+import confs from '@/includes/api/appConfigs'
 
 export default {
   name: 'App',
@@ -24,17 +23,15 @@ export default {
     'app-footer':Footer
   },
   methods:{
-    getConfigsApi(){
-      axios.get('https://demo.clipbucket.com/enterprise/api_public/getConfigs/').then((response) =>{
-          this.$store.commit('setConfigs',response.data.data);
-      },(error)=>{
-          console.log(error);
-      });
+    setAppConfigs:function () {
+      confs.getConfigsApi().then(confs =>{
+        this.$store.commit('setConfigs',confs);
+      });    
     }
   },
   created(){
-      this.$i18n.locale = 'ja';
-      this.getConfigsApi();
+      this.$i18n.locale = 'en';
+      this.setAppConfigs();
   }
 }
 </script>
