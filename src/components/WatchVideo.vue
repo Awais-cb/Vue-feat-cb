@@ -6,8 +6,8 @@
 </template>
 
 <script>
+import videos from '../includes/api/videos'
 import Player from './player/Player';
-import axios from 'axios'
 export default {
   name: 'WatchVideo',
 	data () {
@@ -20,19 +20,14 @@ export default {
 		'video-player':Player,
 	},
 	methods:{
-	  	getVideo:function () {
-	  		let self = this;
-	  		axios.get('https://demo.clipbucket.com/enterprise/api_public/getVideos/?video_id='+this.videoId).then(function (response) {
-	  			var rawData = response.data.data;
-	  			rawData = rawData[0];
-	  			self.vdata = rawData;
-	  		},(error)=>{
-		        console.log(error);
-		    });
-	  	},
+	  	setPageData:function () {
+	  		videos.getVideoApi(this.videoId).then(data =>{
+                this.vdata = data;
+          	});
+	  	}
 	},
 	created:function () {
-	  	this.getVideo();
+	  	this.setPageData();
 	}
 }
 </script>

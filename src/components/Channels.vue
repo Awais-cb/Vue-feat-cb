@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import axios from 'axios'	
+import channels from '../includes/api/channels' 	
 export default {
   	name: 'Channels',
 	data () {
@@ -45,28 +45,17 @@ export default {
 	    }
 	},
 	methods:{
-	  	getFeatChannels:function () {
-	  		let self = this;
-	  		axios.get('https://demo.clipbucket.com/enterprise/api_public/getUsers/?sort=featured').then(function (response) {
-	  			console.log(response);
-	  			self.featChannels = response.data.data;
-	  		},(error)=>{
-		        console.log(error);
-		    });
-	  	},
-	  	getChannels:function () {
-	  		let self = this;
-	  		axios.get('https://demo.clipbucket.com/enterprise/api_public/getUsers/').then(function (response) {
-	  			console.log(response);
-	  			self.channels = response.data.data;
-	  		},(error)=>{
-		        console.log(error);
-		    });
-	  	},	  	
+	  	setPageData:function () {
+          channels.getFeatChannelsApi().then(data =>{
+            this.featChannels = data;
+          });
+          channels.getChannelsApi().then(data =>{
+            this.channels = data;
+          });
+    	}
 	},
 	created:function () {
-	  	this.getFeatChannels();
-	  	this.getChannels();
+	  	this.setPageData();
 	}
 }
 </script>

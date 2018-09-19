@@ -32,14 +32,14 @@ export default {
     }
   },
   methods:{
-  	setPageData:function () {
-    		videos.getFeaturedVideosApi().then(data =>{
-              this.videos = data;
-        });
-  	}
+    	setPageData:function () {
+      		videos.getFeaturedVideosApi().then(data =>{
+                this.videos = data;
+          });
+    	}
   },
   created:function () {
-    this.setPageData();
+      this.setPageData();
   }
 }
 </script>
