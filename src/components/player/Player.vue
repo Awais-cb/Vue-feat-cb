@@ -6,7 +6,7 @@
     </div>
 </template>
 <script>
-var playerLib = require('../../assets/player/hola_player.dev.js');
+import '../../assets/player/hola_player.dev.js';
 export default {
     name: 'Player',
 
