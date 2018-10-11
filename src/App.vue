@@ -22,6 +22,15 @@ export default {
     'app-header':Header,
     'app-footer':Footer
   },
+
+  metaInfo: {
+    link: [
+      { rel: 'stylesheet', href: '../static/css/bootstrap4.min.css' },
+      { rel: 'stylesheet', href: '../static/css/custom.css' },
+      // { rel: 'javascript', href: '/static/js/bootstrap.min.js' },
+      
+    ]
+  },
   methods:{
     setAppConfigs:function () {
       confs.getConfigsApi().then(confs =>{

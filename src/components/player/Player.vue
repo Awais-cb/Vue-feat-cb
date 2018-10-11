@@ -6,7 +6,6 @@
     </div>
 </template>
 <script>
-import '../../assets/player/hola_player.dev.js';
 export default {
     name: 'Player',
 
@@ -21,14 +20,21 @@ export default {
             required:true
         }
     },
+    metaInfo: {
+        script: [
+          { src: '../../../static/js/jquery.min.js', type: 'text/javascript', body: true },
+          { src: '../../assets/player/hola_player.dev.js', type: 'text/javascript', body: true }
+        ]
+    },
     methods:{
         initPlayer:function(){
-            // console.log(this.vdata.video.thumbs);
             window.hola_player({title: this.vdata.video.title});
         }
     },
     mounted:function(){
-        this.initPlayer();
+        setTimeout(function () {
+            this.initPlayer();
+        }, 2000);
     }
 }
 </script>
