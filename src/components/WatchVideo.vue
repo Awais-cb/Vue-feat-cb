@@ -27,6 +27,12 @@ export default {
 	components:{
 		'video-player':Player,
 	},
+	metaInfo: {
+	    script: [
+	    	{ src: '../static/js/jquery.min.js', type: 'text/javascript', body: true },
+	      	{ src: '../static/player/hola_player.dev.js', type: 'text/javascript', body: true }
+	    ]
+	},
 	methods:{
 	  	setPageData:function () {
 	  		videos.getVideoApi(this.videoId).then(data =>{

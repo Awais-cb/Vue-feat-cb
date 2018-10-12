@@ -17257,8 +17257,7 @@ extend_component('PopupMenu', 'Menu', {
         var _this = this;
         var opt = this.options_;
         _this.menuEnabled = true;
-        this.addChild(new PoweredBy(player, {label:
-            'Powered by Spark Player'}));
+        // this.addChild(new PoweredBy(player, {label:'Powered by Clipbucket'}));
         if (opt.copy_url!==false)
         {
             this.addChild(new CopyUrlButton(player, {label: 'Copy video URL',
@@ -17300,8 +17299,8 @@ extend_component('PopupMenu', 'Menu', {
         if (opt.about)
         {
             this.addChild(new MenuItemLink(player, {
-                href: 'https://holaspark.com/player',
-                label: 'About Spark Player',
+                href: 'https://clipbucket.com/',
+                label: 'About Clipbucket',
             }));
         }
         function get_overflow_parent(el){
