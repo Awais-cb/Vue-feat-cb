@@ -31,6 +31,9 @@ export default {
       videos:[],
     }
   },
+  metaInfo:{
+     titleTemplate: 'Videos | %s',
+  },
   methods:{
     	setPageData:function () {
       		videos.getFeaturedVideosApi().then(data =>{

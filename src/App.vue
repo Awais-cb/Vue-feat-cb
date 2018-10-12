@@ -24,13 +24,12 @@ export default {
   },
 
   metaInfo: {
+    title:"Vue Feat CB",
+    titleTemplate: '%s - A demo project created using Clipbucket apis',
     link: [
       { rel: 'stylesheet', href: '../static/css/bootstrap4.min.css' },
       { rel: 'stylesheet', href: '../static/css/custom.css' },
     ],
-    script: [
-
-    ]
   },
   methods:{
     setAppConfigs:function () {

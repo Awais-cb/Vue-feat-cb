@@ -22,13 +22,15 @@ export default {
 	    return {
 	      videoId : this.$route.params.id,
 	      vdata : [],
+	      pageTitle:'Loading...',
 	    }
 	},
 	components:{
 		'video-player':Player,
 	},
 	metaInfo: {
-	    script: [
+		titleTemplate: this.pageTitle+' | %s',
+		script: [
 	    	{ src: '../static/js/jquery.min.js', type: 'text/javascript', body: true },
 	      	{ src: '../static/player/hola_player.dev.js', type: 'text/javascript', body: true }
 	    ]
@@ -37,6 +39,7 @@ export default {
 	  	setPageData:function () {
 	  		videos.getVideoApi(this.videoId).then(data =>{
                 this.vdata = data;
+                this.pageTitle = data.video.title;
           	});
 	  	}
 	},

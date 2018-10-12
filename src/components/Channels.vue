@@ -44,6 +44,9 @@ export default {
 	      channels:[],
 	    }
 	},
+	metaInfo:{
+    	titleTemplate: 'Channels | %s',
+ 	},
 	methods:{
 	  	setPageData:function () {
           channels.getFeatChannelsApi().then(data =>{

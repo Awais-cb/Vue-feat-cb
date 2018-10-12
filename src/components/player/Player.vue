@@ -1,6 +1,6 @@
 <template>
     <div class="Player">
-        <video :poster="vidThumb" preload="none" class="video-js vjs-default-skin" width="1110" height="650" controls>
+        <video :poster="vidThumb" preload="none" class="video-js vjs-default-skin align-vid" width="1080" height="620" controls>
             <source :src="vidUrl" type="application/x-mpegurl">
         </video> 
     </div>
@@ -32,6 +32,10 @@ export default {
 </script>
 <style scoped>
 .Player{
+    
+}
+.align-vid{
+    margin: 0 auto;
 }
 
 </style>

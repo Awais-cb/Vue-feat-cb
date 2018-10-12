@@ -30,6 +30,9 @@ export default {
 	      playlists:[],
 	    }
 	},
+  metaInfo:{
+     titleTemplate: 'Playlists | %s',
+  },
 	methods:{
 	  	setPageData:function () {
     		playlists.getPlaylistsApi().then(data =>{
