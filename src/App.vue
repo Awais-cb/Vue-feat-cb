@@ -27,8 +27,9 @@ export default {
     link: [
       { rel: 'stylesheet', href: '../static/css/bootstrap4.min.css' },
       { rel: 'stylesheet', href: '../static/css/custom.css' },
-      // { rel: 'javascript', href: '/static/js/bootstrap.min.js' },
-      
+    ],
+    script: [
+
     ]
   },
   methods:{
