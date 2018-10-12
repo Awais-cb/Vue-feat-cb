@@ -1,6 +1,6 @@
 <template>
     <div class="Player">
-        <video preload="none" class="video-js vjs-default-skin" width="1110" height="650" controls>
+        <video :poster="vidThumb" preload="none" class="video-js vjs-default-skin" width="1110" height="650" controls>
             <source :src="vidUrl" type="application/x-mpegurl">
         </video> 
     </div>
@@ -12,6 +12,7 @@ export default {
     data(){
         return{
            vidUrl:this.vdata.video.files['240'],
+           vidThumb:this.vdata.video.thumbs['big'],
         }
     },
     props:{
